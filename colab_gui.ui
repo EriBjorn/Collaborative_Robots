@@ -28,9 +28,35 @@
         <widget class="QWidget" name="WidgetJustifier" native="true">
          <layout class="QGridLayout" name="gridLayout_3">
           <item row="0" column="0">
-           <widget class="QWidget" name="LogoJustifier" native="true"/>
+           <widget class="QWidget" name="LogoJustifier" native="true">
+            <layout class="QGridLayout" name="gridLayout_4">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label">
+               <property name="font">
+                <font>
+                 <family>Microsoft Sans Serif</family>
+                 <pointsize>22</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Collaborative Robots in Manulab</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="logo">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/LogoPrefix/Intro-Pic-Cobot-Page-1.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
           </item>
-          <item row="1" column="0">
+          <item row="2" column="0">
            <widget class="QFrame" name="PageSelectors">
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
@@ -69,9 +95,6 @@
              </item>
             </layout>
            </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QWidget" name="NightModeOrg" native="true"/>
           </item>
          </layout>
         </widget>
@@ -151,7 +174,9 @@
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="Logo.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>Demo1PageBtn</sender>
