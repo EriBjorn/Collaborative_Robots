@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1126</width>
-    <height>862</height>
+    <width>1139</width>
+    <height>861</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -36,6 +36,8 @@
                 <font>
                  <family>Microsoft Sans Serif</family>
                  <pointsize>22</pointsize>
+                 <weight>50</weight>
+                 <bold>false</bold>
                 </font>
                </property>
                <property name="text">
@@ -66,28 +68,72 @@
             </property>
             <layout class="QVBoxLayout" name="verticalLayout">
              <item>
-              <widget class="QCommandLinkButton" name="Demo1PageBtn">
+              <widget class="QPushButton" name="Demo1PageBtn">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>100</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>16</pointsize>
+                </font>
+               </property>
                <property name="text">
                 <string>Demo 1: Easy Assembly</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QCommandLinkButton" name="Demo2PageBtn">
+              <widget class="QPushButton" name="Demo2PageBtn">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>100</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>16</pointsize>
+                </font>
+               </property>
                <property name="text">
                 <string>Demo 2: Name Pending</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QCommandLinkButton" name="Demo3PageBtn">
+              <widget class="QPushButton" name="Demo3PageBtn">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>100</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>16</pointsize>
+                </font>
+               </property>
                <property name="text">
                 <string>Demo 3: Name Pending</string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QCommandLinkButton" name="AboutPageBtn">
+              <widget class="QPushButton" name="AboutPageBtn">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>100</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>16</pointsize>
+                </font>
+               </property>
                <property name="text">
                 <string>About this project</string>
                </property>
@@ -95,6 +141,19 @@
              </item>
             </layout>
            </widget>
+          </item>
+          <item row="1" column="0">
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
           </item>
          </layout>
         </widget>
@@ -166,6 +225,68 @@
            </item>
           </layout>
          </widget>
+         <widget class="QWidget" name="Demo3Page">
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QLabel" name="Demo3Label">
+             <property name="text">
+              <string>Demo 3: Name Pending</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="StartDemo3Btn">
+             <property name="text">
+              <string>PushButton</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="StopDemo3Btn">
+             <property name="text">
+              <string>PushButton</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="AboutPage">
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <widget class="QLabel" name="AboutLabel">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>100</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>24</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>About this project</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="AboutTxt">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;This system was created by a group of automation engineering students at NTNU in Aalesund.&lt;br/&gt;The system was created as part of a project in the Mechatronics subject.&lt;br/&gt;The purpose of the project was to make the robots collaborate on a complex task, using vision and a force sensor.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;The group consisted of the following students:&lt;br/&gt;Isak Gamnes Sneltvedt&lt;br/&gt;Erik Bjørnøy&lt;br/&gt;Erlend Holseker&lt;br/&gt;Arvin Khodabandeh&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;The collaborative robots in the Manulab are delivered by Omron.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:600;&quot;&gt;This HMI is powered by Python.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
         </widget>
        </item>
       </layout>
@@ -175,24 +296,7 @@
   </widget>
  </widget>
  <resources>
-  <include location="Logo.qrc"/>
+  <include location="../Collaborative_Robots/Logo.qrc"/>
  </resources>
- <connections>
-  <connection>
-   <sender>Demo1PageBtn</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>WidgetPages</receiver>
-   <slot>show()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>166</x>
-     <y>339</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>721</x>
-     <y>430</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>
