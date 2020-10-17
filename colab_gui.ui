@@ -166,10 +166,26 @@
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
         <widget class="QStackedWidget" name="WidgetPages">
+         <property name="currentIndex">
+          <number>3</number>
+         </property>
          <widget class="QWidget" name="Demo1Page">
           <layout class="QVBoxLayout" name="verticalLayout_2">
            <item>
             <widget class="QLabel" name="Demo1Label">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>100</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>24</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
              <property name="text">
               <string>Demo 1: Easy Assembly</string>
              </property>
@@ -201,6 +217,19 @@
           <layout class="QVBoxLayout" name="verticalLayout_3">
            <item>
             <widget class="QLabel" name="Demo2Label">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>100</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>24</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
              <property name="text">
               <string>Demo 2: Name Pending</string>
              </property>
@@ -229,6 +258,19 @@
           <layout class="QVBoxLayout" name="verticalLayout_4">
            <item>
             <widget class="QLabel" name="Demo3Label">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>100</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>24</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
              <property name="text">
               <string>Demo 3: Name Pending</string>
              </property>
@@ -240,14 +282,14 @@
            <item>
             <widget class="QPushButton" name="StartDemo3Btn">
              <property name="text">
-              <string>PushButton</string>
+              <string>Start Demo 3</string>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QPushButton" name="StopDemo3Btn">
              <property name="text">
-              <string>PushButton</string>
+              <string>Stop Demo 3</string>
              </property>
             </widget>
            </item>
@@ -281,7 +323,60 @@
            <item>
             <widget class="QLabel" name="AboutTxt">
              <property name="text">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;This system was created by a group of automation engineering students at NTNU in Aalesund.&lt;br/&gt;The system was created as part of a project in the Mechatronics subject.&lt;br/&gt;The purpose of the project was to make the robots collaborate on a complex task, using vision and a force sensor.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;The group consisted of the following students:&lt;br/&gt;Isak Gamnes Sneltvedt&lt;br/&gt;Erik Bjørnøy&lt;br/&gt;Erlend Holseker&lt;br/&gt;Arvin Khodabandeh&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;The collaborative robots in the Manulab are delivered by Omron.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:600;&quot;&gt;This HMI is powered by Python.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;This system was created by a group of automation engineering students at NTNU in Aalesund.&lt;br/&gt;The system was created as part of a project in the Mechatronics subject.&lt;br/&gt;The purpose of the project was to make the robots collaborate on a complex task, using vision and a force sensor.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;The group consisted of the following students:&lt;br/&gt;Isak Gamnes Sneltvedt&lt;br/&gt;Erik Bjørnøy&lt;br/&gt;Erlend Holseker&lt;br/&gt;Arvin Khodabandeh&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;The collaborative robots in the Manulab are delivered by Omron.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <item>
+              <widget class="QLabel" name="label_3">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/LogoPrefix/robot_PNG79.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_6">
+               <item>
+                <widget class="QLabel" name="label_5">
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/LogoPrefix/standard_logo_ntnu_u-slagord.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_6">
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/LogoPrefix/OMRON_Logo.svg.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_4">
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/LogoPrefix/Python_logo_and_wordmark.svg.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="font">
+              <font>
+               <pointsize>19</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>This HMI is powered by Python.</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
              </property>
             </widget>
            </item>
@@ -296,7 +391,7 @@
   </widget>
  </widget>
  <resources>
-  <include location="../Collaborative_Robots/Logo.qrc"/>
+  <include location="Logo.qrc"/>
  </resources>
  <connections/>
 </ui>

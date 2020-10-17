@@ -1,5 +1,9 @@
 <RCC>
   <qresource prefix="LogoPrefix">
+    <file>OMRON_Logo.svg.png</file>
+    <file>standard_logo_ntnu_u-slagord.png</file>
+    <file>robot_PNG79.png</file>
+    <file>Python_logo_and_wordmark.svg.png</file>
     <file>Intro-Pic-Cobot-Page-1.png</file>
   </qresource>
 </RCC>
