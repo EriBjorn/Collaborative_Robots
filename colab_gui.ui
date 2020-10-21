@@ -6,14 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1139</width>
+    <width>1394</width>
     <height>861</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(127, 127, 127);</string>
+   </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
      <widget class="QWidget" name="WidgetMenu" native="true">
@@ -22,6 +28,9 @@
         <width>500</width>
         <height>16777215</height>
        </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(127, 127, 127)</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="0" column="0">
@@ -58,13 +67,22 @@
             </layout>
            </widget>
           </item>
-          <item row="2" column="0">
+          <item row="1" column="0">
            <widget class="QFrame" name="PageSelectors">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgb(153, 153, 153)</string>
+            </property>
             <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
+             <enum>QFrame::WinPanel</enum>
             </property>
             <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <property name="lineWidth">
+             <number>1</number>
+            </property>
+            <property name="midLineWidth">
+             <number>0</number>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout">
              <item>
@@ -72,7 +90,7 @@
                <property name="minimumSize">
                 <size>
                  <width>0</width>
-                 <height>100</height>
+                 <height>50</height>
                 </size>
                </property>
                <property name="font">
@@ -80,8 +98,32 @@
                  <pointsize>16</pointsize>
                 </font>
                </property>
+               <property name="toolTip">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: lightgrey;
+border-style: outset;
+border-color: grey;
+border-width: 2px;
+border-radius: 10px;
+padding: 4px;
+
+QPushbutton::pressed
+{
+background-color: grey;
+border-style: inset;
+border-color: grey;
+border-width: 2px;
+border-radius: 10px;
+padding: 4px;
+}</string>
+               </property>
                <property name="text">
                 <string>Demo 1: Easy Assembly</string>
+               </property>
+               <property name="flat">
+                <bool>false</bool>
                </property>
               </widget>
              </item>
@@ -90,13 +132,21 @@
                <property name="minimumSize">
                 <size>
                  <width>0</width>
-                 <height>100</height>
+                 <height>50</height>
                 </size>
                </property>
                <property name="font">
                 <font>
                  <pointsize>16</pointsize>
                 </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: lightgrey;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: grey;
+padding: 4px;</string>
                </property>
                <property name="text">
                 <string>Demo 2: Name Pending</string>
@@ -108,13 +158,21 @@
                <property name="minimumSize">
                 <size>
                  <width>0</width>
-                 <height>100</height>
+                 <height>50</height>
                 </size>
                </property>
                <property name="font">
                 <font>
                  <pointsize>16</pointsize>
                 </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: lightgrey;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: grey;
+padding: 4px;</string>
                </property>
                <property name="text">
                 <string>Demo 3: Name Pending</string>
@@ -126,34 +184,53 @@
                <property name="minimumSize">
                 <size>
                  <width>0</width>
-                 <height>100</height>
+                 <height>50</height>
                 </size>
                </property>
                <property name="font">
                 <font>
                  <pointsize>16</pointsize>
+                 <weight>50</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                 <underline>false</underline>
+                 <strikeout>false</strikeout>
                 </font>
+               </property>
+               <property name="mouseTracking">
+                <bool>false</bool>
+               </property>
+               <property name="layoutDirection">
+                <enum>Qt::LeftToRight</enum>
+               </property>
+               <property name="autoFillBackground">
+                <bool>false</bool>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: lightgrey;
+border-style: outset;
+border-width: 2px;
+border-radius: 10px;
+border-color: grey;
+padding: 4px;</string>
                </property>
                <property name="text">
                 <string>About this project</string>
+               </property>
+               <property name="icon">
+                <iconset resource="Logo.qrc">
+                 <normaloff>:/LogoPrefix/about-512.png</normaloff>:/LogoPrefix/about-512.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>40</width>
+                 <height>40</height>
+                </size>
                </property>
               </widget>
              </item>
             </layout>
            </widget>
-          </item>
-          <item row="1" column="0">
-           <spacer name="verticalSpacer">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
           </item>
          </layout>
         </widget>
@@ -163,11 +240,20 @@
     </item>
     <item row="0" column="1">
      <widget class="QWidget" name="Widget_Contents" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(153, 153, 153)</string>
+      </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
         <widget class="QStackedWidget" name="WidgetPages">
          <property name="currentIndex">
-          <number>3</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="Demo1Page">
           <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -198,16 +284,183 @@
             </widget>
            </item>
            <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <item>
+              <widget class="QFrame" name="verticalFrame_2">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(179, 179, 179);
+border-style: inset;
+border-width: 2px;
+border-radius: 20px;
+border-color: grey;
+padding: 4px;</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::WinPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Sunken</enum>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_8">
+                <item>
+                 <widget class="QLabel" name="label_7">
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>100</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>24</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Current task of Robot 1</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="ModbusInputDemo1Rob1">
+                  <property name="font">
+                   <font>
+                    <pointsize>20</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true"/>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="verticalFrame">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(179, 179, 179);
+border-style: inset;
+border-width: 2px;
+border-radius: 20px;
+border-color: grey;
+padding: 4px;</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::WinPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Sunken</enum>
+               </property>
+               <property name="lineWidth">
+                <number>1</number>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_7">
+                <item>
+                 <widget class="QLabel" name="label_8">
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>100</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>24</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Current task of Robot 2</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="ModbusInputDemo1Rob2">
+                  <property name="font">
+                   <font>
+                    <pointsize>20</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
             <widget class="QPushButton" name="StartDemo1Btn">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>100</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>20</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
              <property name="text">
               <string>Start Demo 1</string>
+             </property>
+             <property name="icon">
+              <iconset resource="Logo.qrc">
+               <normaloff>:/LogoPrefix/start_icon.png</normaloff>:/LogoPrefix/start_icon.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>100</width>
+               <height>100</height>
+              </size>
+             </property>
+             <property name="checkable">
+              <bool>false</bool>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QPushButton" name="StopDemo1Btn">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>100</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>20</pointsize>
+              </font>
+             </property>
              <property name="text">
               <string>Stop Demo 1</string>
+             </property>
+             <property name="icon">
+              <iconset resource="Logo.qrc">
+               <normaloff>:/LogoPrefix/stop_icon.png</normaloff>:/LogoPrefix/stop_icon.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>70</width>
+               <height>70</height>
+              </size>
              </property>
             </widget>
            </item>
@@ -239,16 +492,174 @@
             </widget>
            </item>
            <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <item>
+              <widget class="QFrame" name="verticalFrame_2">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(179, 179, 179);
+border-style: inset;
+border-width: 2px;
+border-radius: 20px;
+border-color: grey;
+padding: 4px;</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::WinPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Sunken</enum>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_10">
+                <item>
+                 <widget class="QLabel" name="label_9">
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>100</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>24</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Current task of Robot 1</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="ModbusInputDemo2Rob1">
+                  <property name="font">
+                   <font>
+                    <pointsize>20</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="verticalFrame">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(179, 179, 179);
+border-style: inset;
+border-width: 2px;
+border-radius: 20px;
+border-color: grey;
+padding: 4px;</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::WinPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Sunken</enum>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_9">
+                <item>
+                 <widget class="QLabel" name="label_11">
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>100</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>24</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Current task of Robot 2</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="ModbusInputDemo2Rob2">
+                  <property name="font">
+                   <font>
+                    <pointsize>20</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
             <widget class="QPushButton" name="StartDemo2Btn">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>100</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>20</pointsize>
+              </font>
+             </property>
              <property name="text">
               <string>Start Demo 2</string>
+             </property>
+             <property name="icon">
+              <iconset resource="Logo.qrc">
+               <normaloff>:/LogoPrefix/start_icon.png</normaloff>:/LogoPrefix/start_icon.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>100</width>
+               <height>100</height>
+              </size>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QPushButton" name="StopDemo2Btn">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>100</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>20</pointsize>
+              </font>
+             </property>
              <property name="text">
               <string>Stop Demo 2</string>
+             </property>
+             <property name="icon">
+              <iconset resource="Logo.qrc">
+               <normaloff>:/LogoPrefix/stop_icon.png</normaloff>:/LogoPrefix/stop_icon.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>70</width>
+               <height>70</height>
+              </size>
              </property>
             </widget>
            </item>
@@ -280,16 +691,174 @@
             </widget>
            </item>
            <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_5">
+             <item>
+              <widget class="QFrame" name="verticalFrame">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(179, 179, 179);
+border-style: inset;
+border-width: 2px;
+border-radius: 20px;
+border-color: grey;
+padding: 4px;</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::WinPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Sunken</enum>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_11">
+                <item>
+                 <widget class="QLabel" name="label_10">
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>100</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>24</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Current task of Robot 1</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="ModbusInputDemo3Rob1">
+                  <property name="font">
+                   <font>
+                    <pointsize>20</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="verticalFrame_2">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(179, 179, 179);
+border-style: inset;
+border-width: 2px;
+border-radius: 20px;
+border-color: grey;
+padding: 4px;</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::WinPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Sunken</enum>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_12">
+                <item>
+                 <widget class="QLabel" name="label_13">
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>100</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>24</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Current task of Robot 2</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="ModbusInputDemo3Rob2">
+                  <property name="font">
+                   <font>
+                    <pointsize>20</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
             <widget class="QPushButton" name="StartDemo3Btn">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>100</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>20</pointsize>
+              </font>
+             </property>
              <property name="text">
               <string>Start Demo 3</string>
+             </property>
+             <property name="icon">
+              <iconset resource="Logo.qrc">
+               <normaloff>:/LogoPrefix/start_icon.png</normaloff>:/LogoPrefix/start_icon.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>100</width>
+               <height>100</height>
+              </size>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QPushButton" name="StopDemo3Btn">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>100</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>20</pointsize>
+              </font>
+             </property>
              <property name="text">
               <string>Stop Demo 3</string>
+             </property>
+             <property name="icon">
+              <iconset resource="Logo.qrc">
+               <normaloff>:/LogoPrefix/stop_icon.png</normaloff>:/LogoPrefix/stop_icon.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>70</width>
+               <height>70</height>
+              </size>
              </property>
             </widget>
            </item>
