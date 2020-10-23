@@ -16,6 +16,8 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1394, 861)
         MainWindow.setStyleSheet("")
+
+        # Setting the layout of the GUI
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setStyleSheet("background-color: rgb(127, 127, 127);")
         self.centralwidget.setObjectName("centralwidget")
@@ -49,8 +51,15 @@ class Ui_MainWindow(object):
         self.logo.setObjectName("logo")
         self.gridLayout_4.addWidget(self.logo, 1, 0, 1, 1)
         self.gridLayout_3.addWidget(self.LogoJustifier, 0, 0, 1, 1)
+
+        # Constructing the Page Selector Menu
         self.PageSelectors = QtWidgets.QFrame(self.WidgetJustifier)
-        self.PageSelectors.setStyleSheet("background-color:rgb(153, 153, 153)")
+        self.PageSelectors.setStyleSheet("background-color:rgb(153, 153, 153);"
+                                         "border-style: outset;"
+                                         "border-width: 2px;"
+                                         "border-radius: 20px;"
+                                         "border-color: grey;"
+                                         "padding: 4px;")
         self.PageSelectors.setFrameShape(QtWidgets.QFrame.WinPanel)
         self.PageSelectors.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.PageSelectors.setLineWidth(1)
@@ -58,6 +67,8 @@ class Ui_MainWindow(object):
         self.PageSelectors.setObjectName("PageSelectors")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.PageSelectors)
         self.verticalLayout.setObjectName("verticalLayout")
+
+        # Constructing Demo 1 selector button
         self.Demo1PageBtn = QtWidgets.QPushButton(self.PageSelectors)
         self.Demo1PageBtn.setMinimumSize(QtCore.QSize(0, 50))
         font = QtGui.QFont()
@@ -84,6 +95,8 @@ class Ui_MainWindow(object):
         self.Demo1PageBtn.setFlat(False)
         self.Demo1PageBtn.setObjectName("Demo1PageBtn")
         self.verticalLayout.addWidget(self.Demo1PageBtn)
+
+        # Constructing Demo 2 selector button
         self.Demo2PageBtn = QtWidgets.QPushButton(self.PageSelectors)
         self.Demo2PageBtn.setMinimumSize(QtCore.QSize(0, 50))
         font = QtGui.QFont()
@@ -109,6 +122,8 @@ class Ui_MainWindow(object):
                                         "}")
         self.Demo2PageBtn.setObjectName("Demo2PageBtn")
         self.verticalLayout.addWidget(self.Demo2PageBtn)
+
+        # Constructing Demo 3 selector button
         self.Demo3PageBtn = QtWidgets.QPushButton(self.PageSelectors)
         self.Demo3PageBtn.setMinimumSize(QtCore.QSize(0, 50))
         font = QtGui.QFont()
@@ -134,6 +149,8 @@ class Ui_MainWindow(object):
                                         "}")
         self.Demo3PageBtn.setObjectName("Demo3PageBtn")
         self.verticalLayout.addWidget(self.Demo3PageBtn)
+
+        # Constructing the About page selector button
         self.AboutPageBtn = QtWidgets.QPushButton(self.PageSelectors)
         self.AboutPageBtn.setMinimumSize(QtCore.QSize(0, 50))
         font = QtGui.QFont()
@@ -171,6 +188,7 @@ class Ui_MainWindow(object):
         self.AboutPageBtn.setIconSize(QtCore.QSize(40, 40))
         self.AboutPageBtn.setObjectName("AboutPageBtn")
         self.verticalLayout.addWidget(self.AboutPageBtn)
+
         self.gridLayout_3.addWidget(self.PageSelectors, 1, 0, 1, 1)
         self.gridLayout_2.addWidget(self.WidgetJustifier, 0, 0, 1, 1)
         self.gridLayout.addWidget(self.WidgetMenu, 0, 0, 1, 1)
@@ -184,8 +202,12 @@ class Ui_MainWindow(object):
         self.Widget_Contents.setObjectName("Widget_Contents")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.Widget_Contents)
         self.horizontalLayout.setObjectName("horizontalLayout")
+
+        # Constructing the different pages
         self.WidgetPages = QtWidgets.QStackedWidget(self.Widget_Contents)
         self.WidgetPages.setObjectName("WidgetPages")
+
+        # Constructing the page for Demo 1
         self.Demo1Page = QtWidgets.QWidget()
         self.Demo1Page.setObjectName("Demo1Page")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.Demo1Page)
@@ -205,11 +227,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         self.verticalFrame_2 = QtWidgets.QFrame(self.Demo1Page)
         self.verticalFrame_2.setStyleSheet("background-color: rgb(179, 179, 179);\n"
-"border-style: inset;\n"
-"border-width: 2px;\n"
-"border-radius: 20px;\n"
-"border-color: grey;\n"
-"padding: 4px;")
+                                           "border-style: inset;\n"
+                                           "border-width: 2px;\n"
+                                           "border-radius: 20px;\n"
+                                           "border-color: grey;\n"
+                                           "padding: 4px;")
         self.verticalFrame_2.setFrameShape(QtWidgets.QFrame.WinPanel)
         self.verticalFrame_2.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.verticalFrame_2.setObjectName("verticalFrame_2")
@@ -235,11 +257,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.addWidget(self.verticalFrame_2)
         self.verticalFrame = QtWidgets.QFrame(self.Demo1Page)
         self.verticalFrame.setStyleSheet("background-color: rgb(179, 179, 179);\n"
-"border-style: inset;\n"
-"border-width: 2px;\n"
-"border-radius: 20px;\n"
-"border-color: grey;\n"
-"padding: 4px;")
+                                         "border-style: inset;\n"
+                                         "border-width: 2px;\n"
+                                         "border-radius: 20px;\n"
+                                         "border-color: grey;\n"
+                                         "padding: 4px;")
         self.verticalFrame.setFrameShape(QtWidgets.QFrame.WinPanel)
         self.verticalFrame.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.verticalFrame.setLineWidth(1)
@@ -269,23 +291,23 @@ class Ui_MainWindow(object):
         font.setPointSize(20)
         self.StartDemo1Btn.setFont(font)
         self.StartDemo1Btn.setStyleSheet("QPushButton"
-                                        "{"
-                                        "background-color : rgb(170, 170, 170);"
-                                        "border-style: outset;\n"
-                                        "border-width: 1px;\n"
-                                        "border-radius: 10px;\n"
-                                        "border-color: grey;\n"
-                                        "padding: 4px;"
-                                        "}"
-                                        "QPushButton::pressed"
-                                        "{"
-                                        "background-color : rgb(160, 160, 160);"
-                                        "border-style: inset;\n"
-                                        "border-width: 1px;\n"
-                                        "border-radius: 10px;\n"
-                                        "border-color: grey;\n"
-                                        "padding: 4px;"
-                                        "}")
+                                         "{"
+                                         "background-color : rgb(170, 170, 170);"
+                                         "border-style: outset;\n"
+                                         "border-width: 1px;\n"
+                                         "border-radius: 10px;\n"
+                                         "border-color: grey;\n"
+                                         "padding: 4px;"
+                                         "}"
+                                         "QPushButton::pressed"
+                                         "{"
+                                         "background-color : rgb(160, 160, 160);"
+                                         "border-style: inset;\n"
+                                         "border-width: 1px;\n"
+                                         "border-radius: 10px;\n"
+                                         "border-color: grey;\n"
+                                         "padding: 4px;"
+                                         "}")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap(":/LogoPrefix/start_icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.StartDemo1Btn.setIcon(icon1)
@@ -323,6 +345,8 @@ class Ui_MainWindow(object):
         self.StopDemo1Btn.setObjectName("StopDemo1Btn")
         self.verticalLayout_2.addWidget(self.StopDemo1Btn)
         self.WidgetPages.addWidget(self.Demo1Page)
+
+        # Constructing the page for Demo 2
         self.Demo2Page = QtWidgets.QWidget()
         self.Demo2Page.setObjectName("Demo2Page")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.Demo2Page)
@@ -341,11 +365,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
         self.verticalFrame_21 = QtWidgets.QFrame(self.Demo2Page)
         self.verticalFrame_21.setStyleSheet("background-color: rgb(179, 179, 179);\n"
-"border-style: inset;\n"
-"border-width: 2px;\n"
-"border-radius: 20px;\n"
-"border-color: grey;\n"
-"padding: 4px;")
+                                            "border-style: inset;\n"
+                                            "border-width: 2px;\n"
+                                            "border-radius: 20px;\n"
+                                            "border-color: grey;\n"
+                                            "padding: 4px;")
         self.verticalFrame_21.setFrameShape(QtWidgets.QFrame.WinPanel)
         self.verticalFrame_21.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.verticalFrame_21.setObjectName("verticalFrame_21")
@@ -370,11 +394,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4.addWidget(self.verticalFrame_21)
         self.verticalFrame1 = QtWidgets.QFrame(self.Demo2Page)
         self.verticalFrame1.setStyleSheet("background-color: rgb(179, 179, 179);\n"
-"border-style: inset;\n"
-"border-width: 2px;\n"
-"border-radius: 20px;\n"
-"border-color: grey;\n"
-"padding: 4px;")
+                                          "border-style: inset;\n"
+                                          "border-width: 2px;\n"
+                                          "border-radius: 20px;\n"
+                                          "border-color: grey;\n"
+                                          "padding: 4px;")
         self.verticalFrame1.setFrameShape(QtWidgets.QFrame.WinPanel)
         self.verticalFrame1.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.verticalFrame1.setObjectName("verticalFrame1")
@@ -404,23 +428,23 @@ class Ui_MainWindow(object):
         font.setPointSize(20)
         self.StartDemo2Btn.setFont(font)
         self.StartDemo2Btn.setStyleSheet("QPushButton"
-                                        "{"
-                                        "background-color : rgb(170, 170, 170);"
-                                        "border-style: outset;\n"
-                                        "border-width: 1px;\n"
-                                        "border-radius: 10px;\n"
-                                        "border-color: grey;\n"
-                                        "padding: 4px;"
-                                        "}"
-                                        "QPushButton::pressed"
-                                        "{"
-                                        "background-color : rgb(160, 160, 160);"
-                                        "border-style: inset;\n"
-                                        "border-width: 1px;\n"
-                                        "border-radius: 10px;\n"
-                                        "border-color: grey;\n"
-                                        "padding: 4px;"
-                                        "}")
+                                         "{"
+                                         "background-color : rgb(170, 170, 170);"
+                                         "border-style: outset;\n"
+                                         "border-width: 1px;\n"
+                                         "border-radius: 10px;\n"
+                                         "border-color: grey;\n"
+                                         "padding: 4px;"
+                                         "}"
+                                         "QPushButton::pressed"
+                                         "{"
+                                         "background-color : rgb(160, 160, 160);"
+                                         "border-style: inset;\n"
+                                         "border-width: 1px;\n"
+                                         "border-radius: 10px;\n"
+                                         "border-color: grey;\n"
+                                         "padding: 4px;"
+                                         "}")
         self.StartDemo2Btn.setIcon(icon1)
         self.StartDemo2Btn.setIconSize(QtCore.QSize(100, 100))
         self.StartDemo2Btn.setObjectName("StartDemo2Btn")
@@ -453,6 +477,8 @@ class Ui_MainWindow(object):
         self.StopDemo2Btn.setObjectName("StopDemo2Btn")
         self.verticalLayout_3.addWidget(self.StopDemo2Btn)
         self.WidgetPages.addWidget(self.Demo2Page)
+
+        # Constructing the page for Demo 3
         self.Demo3Page = QtWidgets.QWidget()
         self.Demo3Page.setObjectName("Demo3Page")
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.Demo3Page)
@@ -471,11 +497,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
         self.verticalFrame2 = QtWidgets.QFrame(self.Demo3Page)
         self.verticalFrame2.setStyleSheet("background-color: rgb(179, 179, 179);\n"
-"border-style: inset;\n"
-"border-width: 2px;\n"
-"border-radius: 20px;\n"
-"border-color: grey;\n"
-"padding: 4px;")
+                                          "border-style: inset;\n"
+                                          "border-width: 2px;\n"
+                                          "border-radius: 20px;\n"
+                                          "border-color: grey;\n"
+                                          "padding: 4px;")
         self.verticalFrame2.setFrameShape(QtWidgets.QFrame.WinPanel)
         self.verticalFrame2.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.verticalFrame2.setObjectName("verticalFrame2")
@@ -500,11 +526,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_5.addWidget(self.verticalFrame2)
         self.verticalFrame_22 = QtWidgets.QFrame(self.Demo3Page)
         self.verticalFrame_22.setStyleSheet("background-color: rgb(179, 179, 179);\n"
-"border-style: inset;\n"
-"border-width: 2px;\n"
-"border-radius: 20px;\n"
-"border-color: grey;\n"
-"padding: 4px;")
+                                            "border-style: inset;\n"
+                                            "border-width: 2px;\n"
+                                            "border-radius: 20px;\n"
+                                            "border-color: grey;\n"
+                                            "padding: 4px;")
         self.verticalFrame_22.setFrameShape(QtWidgets.QFrame.WinPanel)
         self.verticalFrame_22.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.verticalFrame_22.setObjectName("verticalFrame_22")
@@ -534,23 +560,23 @@ class Ui_MainWindow(object):
         font.setPointSize(20)
         self.StartDemo3Btn.setFont(font)
         self.StartDemo3Btn.setStyleSheet("QPushButton"
-                                        "{"
-                                        "background-color : rgb(170, 170, 170);"
-                                        "border-style: outset;\n"
-                                        "border-width: 1px;\n"
-                                        "border-radius: 10px;\n"
-                                        "border-color: grey;\n"
-                                        "padding: 4px;"
-                                        "}"
-                                        "QPushButton::pressed"
-                                        "{"
-                                        "background-color : rgb(160, 160, 160);"
-                                        "border-style: inset;\n"
-                                        "border-width: 1px;\n"
-                                        "border-radius: 10px;\n"
-                                        "border-color: grey;\n"
-                                        "padding: 4px;"
-                                        "}")
+                                         "{"
+                                         "background-color : rgb(170, 170, 170);"
+                                         "border-style: outset;\n"
+                                         "border-width: 1px;\n"
+                                         "border-radius: 10px;\n"
+                                         "border-color: grey;\n"
+                                         "padding: 4px;"
+                                         "}"
+                                         "QPushButton::pressed"
+                                         "{"
+                                         "background-color : rgb(160, 160, 160);"
+                                         "border-style: inset;\n"
+                                         "border-width: 1px;\n"
+                                         "border-radius: 10px;\n"
+                                         "border-color: grey;\n"
+                                         "padding: 4px;"
+                                         "}")
         self.StartDemo3Btn.setIcon(icon1)
         self.StartDemo3Btn.setIconSize(QtCore.QSize(100, 100))
         self.StartDemo3Btn.setObjectName("StartDemo3Btn")
@@ -583,6 +609,8 @@ class Ui_MainWindow(object):
         self.StopDemo3Btn.setObjectName("StopDemo3Btn")
         self.verticalLayout_4.addWidget(self.StopDemo3Btn)
         self.WidgetPages.addWidget(self.Demo3Page)
+
+        # Constructing the "About this project" page
         self.AboutPage = QtWidgets.QWidget()
         self.AboutPage.setObjectName("AboutPage")
         self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.AboutPage)
@@ -632,31 +660,33 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.Widget_Contents, 0, 1, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
 
+        # Calling the retranslateUi-method to set the text of all labels
         self.retranslateUi(MainWindow)
         self.WidgetPages.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+        # Method for setting the text of labels in the GUI
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label.setText(_translate("MainWindow", "Collaborative Robots in Manulab"))
         self.logo.setText(_translate("MainWindow", "<html><head/><body><p><img src=\":/LogoPrefix/Intro-Pic-Cobot-Page-1.png\"/></p></body></html>"))
         self.Demo1PageBtn.setToolTip(_translate("MainWindow", "<html><head/><body><p><br/></p></body></html>"))
-        self.Demo1PageBtn.setText(_translate("MainWindow", "Demo 1: Easy Assembly"))
-        self.Demo2PageBtn.setText(_translate("MainWindow", "Demo 2: Name Pending"))
-        self.Demo3PageBtn.setText(_translate("MainWindow", "Demo 3: Name Pending"))
+        self.Demo1PageBtn.setText(_translate("MainWindow", "Demo 1: Easy Collaborative Task"))
+        self.Demo2PageBtn.setText(_translate("MainWindow", "Demo 2: Simple Gear Assembly"))
+        self.Demo3PageBtn.setText(_translate("MainWindow", "Demo 3: Advanced Gear Assembly"))
         self.AboutPageBtn.setText(_translate("MainWindow", "About this project"))
-        self.Demo1Label.setText(_translate("MainWindow", "Demo 1: Easy Assembly"))
+        self.Demo1Label.setText(_translate("MainWindow", "Demo 1: Easy Collaborative Task"))
         self.label_7.setText(_translate("MainWindow", "Current task of Robot 1"))
         self.label_8.setText(_translate("MainWindow", "Current task of Robot 2"))
         self.StartDemo1Btn.setText(_translate("MainWindow", "Start Demo 1"))
         self.StopDemo1Btn.setText(_translate("MainWindow", "Stop Demo 1"))
-        self.Demo2Label.setText(_translate("MainWindow", "Demo 2: Name Pending"))
+        self.Demo2Label.setText(_translate("MainWindow", "Demo 2: Simple Gear Assembly"))
         self.label_9.setText(_translate("MainWindow", "Current task of Robot 1"))
         self.label_11.setText(_translate("MainWindow", "Current task of Robot 2"))
         self.StartDemo2Btn.setText(_translate("MainWindow", "Start Demo 2"))
         self.StopDemo2Btn.setText(_translate("MainWindow", "Stop Demo 2"))
-        self.Demo3Label.setText(_translate("MainWindow", "Demo 3: Name Pending"))
+        self.Demo3Label.setText(_translate("MainWindow", "Demo 3: Advanced Gear Assembly"))
         self.label_10.setText(_translate("MainWindow", "Current task of Robot 1"))
         self.label_13.setText(_translate("MainWindow", "Current task of Robot 2"))
         self.StartDemo3Btn.setText(_translate("MainWindow", "Start Demo 3"))
@@ -670,30 +700,23 @@ class Ui_MainWindow(object):
         self.label_2.setText(_translate("MainWindow", "This HMI is powered by Python."))
 import Logo_rc
 
+# Class used to connect the Page Selector buttons to the different pages
 class ControlMainWindow(QtWidgets.QMainWindow):
     def __init__(self, parent=None):
         super(ControlMainWindow, self).__init__(parent)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
+        # Connecting the buttons
         self.ui.Demo1PageBtn.clicked.connect(lambda : self.ui.WidgetPages.setCurrentIndex(0))
         self.ui.Demo2PageBtn.clicked.connect(lambda : self.ui.WidgetPages.setCurrentIndex(1))
         self.ui.Demo3PageBtn.clicked.connect(lambda : self.ui.WidgetPages.setCurrentIndex(2))
         self.ui.AboutPageBtn.clicked.connect(lambda : self.ui.WidgetPages.setCurrentIndex(3))
 
+# Main function for running the GUI Application
 if __name__ == '__main__':
     import sys
     app = QtWidgets.QApplication(sys.argv)
     mySW = ControlMainWindow()
     mySW.show()
     sys.exit(app.exec_())
-
-
-# if __name__ == "__main__":
-#     import sys
-#     app = QtWidgets.QApplication(sys.argv)
-#     MainWindow = QtWidgets.QMainWindow()
-#     ui = Ui_MainWindow()
-#     ui.setupUi(MainWindow)
-#     MainWindow.show()
-#     sys.exit(app.exec_())
