@@ -16,16 +16,21 @@ class ModbusTCPServer(object):
 		"""
 		Initiates modbus server and runs is.
 		Set your own IP-Adresse as host, or "localhost"
-		Host: own IP-adresse
-		Port: port for modbus-communication
+		:param host: own IP-adresse
+		:param port: port for modbus-communication
 		"""
 
 		self.host = host
 		self.port = port
 		self.no_block = no_block
 		self.server = ModbusServer(self.host, self.port, self.no_block)
-		self.server.start()
 
+
+	def connectServer(self):
+		"""
+		Starts the server
+		"""
+		self.server.start()
 
 	def isConnected(self):
 		"""
@@ -43,7 +48,7 @@ class ModbusTCPServer(object):
 		"""
 
 		self.server.stop()
-		return True
+		return server.is_run
 
 	def sendBool(self, register_adrs, value):
 		"""
@@ -61,7 +66,7 @@ class ModbusTCPServer(object):
 		register_adrs: adresse to read from
 		"""
 
-		return DataBank.get_bits(address=self.register_adrs)
+		return DataBank.get_bits(address=register_adrs)
 
 
 	def sendInt(self, register_adrs, value):
@@ -79,17 +84,17 @@ class ModbusTCPServer(object):
 		Recive 32-bit integer value
 		register_adrs: is the modbus register adress to read from
 		"""
-		return DataBank.get_words(address=self.register_adrs)
+		return DataBank.get_words(address=register_adrs)
 
 
-if __name__=="__main__":
-
-	print("Connecting to server.. ")
-	print("Server started.. ")
-	client = ModbusTCPServer("10.0.12.101", 12345, True)	#10.0.12.101
-	while client.isConnected():
-
-		client.sendBool(9001, [bool(True)])
-
-	print(client.isConnected())
-	client.disconnect()
+# if __name__=="__main__":
+#
+# 	print("Connecting to server.. ")
+# 	print("Server started.. ")
+# 	server = ModbusTCPServer("10.0.12.249", 502, True)	#10.0.12.101
+# 	while server.isConnected():
+#
+# 		print(server.readInt(1000))
+#
+# 	print(server.isConnected())
+# 	server.disconnect()

@@ -9,7 +9,11 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from threading import Thread
 
+# Setting up Modbus communication
+import Modbus_Server as modbus
+server = modbus.ModbusTCPServer(host='10.0.12.249', port=502, no_block=True)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -188,8 +192,68 @@ class Ui_MainWindow(object):
         self.AboutPageBtn.setIconSize(QtCore.QSize(40, 40))
         self.AboutPageBtn.setObjectName("AboutPageBtn")
         self.verticalLayout.addWidget(self.AboutPageBtn)
-
         self.gridLayout_3.addWidget(self.PageSelectors, 1, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.WidgetJustifier, 0, 0, 1, 1)
+        self.gridLayout.addWidget(self.WidgetMenu, 0, 0, 1, 1)
+        self.label_12 = QtWidgets.QLabel(self.WidgetJustifier)
+        font = QtGui.QFont()
+        font.setPointSize(18)
+        self.label_12.setFont(font)
+        self.label_12.setStyleSheet("color: black")
+        self.label_12.setFrameShape(QtWidgets.QFrame.WinPanel)
+        self.label_12.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.label_12.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_12.setObjectName("label_12")
+        self.label_12.setMaximumSize(QtCore.QSize(16777215, 30))
+        self.gridLayout_3.addWidget(self.label_12, 4, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.WidgetJustifier, 0, 0, 1, 1)
+        self.gridLayout.addWidget(self.WidgetMenu, 0, 0, 1, 1)
+        self.modbusConnectBtn = QtWidgets.QPushButton(self.WidgetJustifier)
+        self.modbusConnectBtn.setObjectName("modbusConnectBtn")
+        self.modbusConnectBtn.setStyleSheet("QPushButton"
+                                            "{"
+                                            "background-color : rgb(74, 255, 101);"
+                                            "border-style: outset;\n"
+                                            "border-width: 2px;\n"
+                                            "border-radius: 10px;\n"
+                                            "border-color: green;\n"
+                                            "padding: 4px;"
+                                            "}"
+                                            "QPushButton::pressed"
+                                            "{"
+                                            "background-color : rgb(0, 226, 0);"
+                                            "border-style: inset;\n"
+                                            "border-width: 2px;\n"
+                                            "border-radius: 10px;\n"
+                                            "border-color: green;\n"
+                                            "padding: 4px;"
+                                            "}")
+        self.modbusConnectBtn.setMinimumSize(QtCore.QSize(16777215, 40))
+        self.gridLayout_3.addWidget(self.modbusConnectBtn, 2, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.WidgetJustifier, 0, 0, 1, 1)
+        self.gridLayout.addWidget(self.WidgetMenu, 0, 0, 1, 1)
+        self.modbusDisconnectBtn = QtWidgets.QPushButton(self.WidgetJustifier)
+        self.modbusDisconnectBtn.setObjectName("modbusDisconnectBtn")
+        self.modbusDisconnectBtn.setStyleSheet("QPushButton"
+                                               "{"
+                                               "background-color : rgb(255, 83, 108);"
+                                               "border-style: outset;\n"
+                                               "border-width: 2px;\n"
+                                               "border-radius: 10px;\n"
+                                               "border-color: red;\n"
+                                               "padding: 4px;"
+                                               "}"
+                                               "QPushButton::pressed"
+                                               "{"
+                                               "background-color : rgb(255, 50, 75);"
+                                               "border-style: inset;\n"
+                                               "border-width: 2px;\n"
+                                               "border-radius: 10px;\n"
+                                               "border-color: red;\n"
+                                               "padding: 4px;"
+                                               "}")
+        self.modbusDisconnectBtn.setMinimumSize(QtCore.QSize(16777215, 40))
+        self.gridLayout_3.addWidget(self.modbusDisconnectBtn, 3, 0, 1, 1)
         self.gridLayout_2.addWidget(self.WidgetJustifier, 0, 0, 1, 1)
         self.gridLayout.addWidget(self.WidgetMenu, 0, 0, 1, 1)
         self.Widget_Contents = QtWidgets.QWidget(self.centralwidget)
@@ -281,6 +345,7 @@ class Ui_MainWindow(object):
         font.setPointSize(20)
         self.ModbusInputDemo1Rob2.setFont(font)
         self.ModbusInputDemo1Rob2.setText("")
+        self.ModbusInputDemo1Rob2.setAlignment(QtCore.Qt.AlignCenter)
         self.ModbusInputDemo1Rob2.setObjectName("ModbusInputDemo1Rob2")
         self.verticalLayout_7.addWidget(self.ModbusInputDemo1Rob2)
         self.horizontalLayout_3.addWidget(self.verticalFrame)
@@ -665,6 +730,43 @@ class Ui_MainWindow(object):
         self.WidgetPages.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+        # Creating lists containing the status of the robots in the different demos
+        self.statusListRobo1Demo1 = ["Doing something 1",
+                                    "Doing something else 2",
+                                    "Messing around 3",
+                                    "Making robot movements 4",
+                                    "Hello world 5"]
+
+        self.statusListRobo2Demo1 = ["Doing something 1",
+                                    "Doing something else 2",
+                                    "Messing around 3",
+                                    "Making robot movements 4",
+                                    "Hello world 5"]
+
+        self.statusListRobo1Demo2 = ["Doing something 1",
+                                    "Doing something else 2",
+                                    "Messing around 3",
+                                    "Making robot movements 4",
+                                    "Hello world 5"]
+
+        self.statusListRobo2Demo2 = ["Doing something 1",
+                                    "Doing something else 2",
+                                    "Messing around 3",
+                                    "Making robot movements 4",
+                                    "Hello world 5"]
+
+        self.statusListRobo1Demo3 = ["Doing something 1",
+                                    "Doing something else 2",
+                                    "Messing around 3",
+                                    "Making robot movements 4",
+                                    "Hello world 5"]
+
+        self.statusListRobo2Demo3 = ["Doing something 1",
+                                    "Doing something else 2",
+                                    "Messing around 3",
+                                    "Making robot movements 4",
+                                    "Hello world 5"]
+
         # Method for setting the text of labels in the GUI
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -672,10 +774,13 @@ class Ui_MainWindow(object):
         self.label.setText(_translate("MainWindow", "Collaborative Robots in Manulab"))
         self.logo.setText(_translate("MainWindow", "<html><head/><body><p><img src=\":/LogoPrefix/Intro-Pic-Cobot-Page-1.png\"/></p></body></html>"))
         self.Demo1PageBtn.setToolTip(_translate("MainWindow", "<html><head/><body><p><br/></p></body></html>"))
+        self.label_12.setText(_translate("MainWindow", "Modbus is not connected"))
         self.Demo1PageBtn.setText(_translate("MainWindow", "Demo 1: Easy Collaborative Task"))
         self.Demo2PageBtn.setText(_translate("MainWindow", "Demo 2: Simple Gear Assembly"))
         self.Demo3PageBtn.setText(_translate("MainWindow", "Demo 3: Advanced Gear Assembly"))
         self.AboutPageBtn.setText(_translate("MainWindow", "About this project"))
+        self.modbusConnectBtn.setText(_translate("MainWindow", "Connect Modbus Server"))
+        self.modbusDisconnectBtn.setText(_translate("MainWindow", "Disconnect Modbus Server"))
         self.Demo1Label.setText(_translate("MainWindow", "Demo 1: Easy Collaborative Task"))
         self.label_7.setText(_translate("MainWindow", "Current task of Robot 1"))
         self.label_8.setText(_translate("MainWindow", "Current task of Robot 2"))
@@ -706,6 +811,14 @@ class ControlMainWindow(QtWidgets.QMainWindow):
         super(ControlMainWindow, self).__init__(parent)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        # Starting a thread to listen for inputs from PLC
+        self.listenThread = Thread(target=self.readModbusInputs, args=())
+        self.listenThread.daemon = True
+        self.startListenThread()
+
+        self.connectingThread = Thread(target=self.connectingServer, args=())
+        self.connectingThread.daemon = True
+        self.startConnectingThread()
 
         # Connecting the buttons
         self.ui.Demo1PageBtn.clicked.connect(lambda : self.ui.WidgetPages.setCurrentIndex(0))
@@ -713,10 +826,65 @@ class ControlMainWindow(QtWidgets.QMainWindow):
         self.ui.Demo3PageBtn.clicked.connect(lambda : self.ui.WidgetPages.setCurrentIndex(2))
         self.ui.AboutPageBtn.clicked.connect(lambda : self.ui.WidgetPages.setCurrentIndex(3))
 
+        # Connecting GUI buttons to Modbus
+        self.ui.StartDemo1Btn.pressed.connect(lambda : server.sendBool(9000, [bool(True)]))
+        self.ui.StopDemo1Btn.pressed.connect(lambda : server.sendBool(9000, [bool(False)]))
+        self.ui.StartDemo2Btn.pressed.connect(lambda : server.sendBool(9001, [bool(True)]))
+        self.ui.StopDemo2Btn.pressed.connect(lambda : server.sendBool(9001, [bool(False)]))
+        self.ui.StartDemo3Btn.pressed.connect(lambda : server.sendBool(9002, [bool(True)]))
+        self.ui.StopDemo3Btn.pressed.connect(lambda : server.sendBool(9002, [bool(False)]))
+
+        self.ui.modbusConnectBtn.clicked.connect(lambda : server.connectServer())
+        self.ui.modbusDisconnectBtn.clicked.connect(lambda : server.disconnect())
+
+    def startListenThread(self):
+        self.listenThread.start()
+        return self
+
+    def readModbusInputs(self):
+        while True:
+            self.ui.ModbusInputDemo1Rob1.setText(self.ui.statusListRobo1Demo1[server.readInt(1000)[0]])
+            self.ui.ModbusInputDemo1Rob2.setText(self.ui.statusListRobo2Demo1[server.readInt(1001)[0]])
+            self.ui.ModbusInputDemo2Rob1.setText(self.ui.statusListRobo1Demo2[server.readInt(1002)[0]])
+            self.ui.ModbusInputDemo2Rob2.setText(self.ui.statusListRobo2Demo2[server.readInt(1003)[0]])
+            self.ui.ModbusInputDemo3Rob1.setText(self.ui.statusListRobo1Demo3[server.readInt(1004)[0]])
+            self.ui.ModbusInputDemo3Rob2.setText(self.ui.statusListRobo2Demo3[server.readInt(1005)[0]])
+
+            if server.readBool(9000)[0]:
+                self.ui.StartDemo2Btn.setDisabled(True)
+                self.ui.StartDemo3Btn.setDisabled(True)
+            elif server.readBool(9001)[0]:
+                self.ui.StartDemo1Btn.setDisabled(True)
+                self.ui.StartDemo3Btn.setDisabled(True)
+            elif server.readBool(9002)[0]:
+                self.ui.StartDemo1Btn.setDisabled(True)
+                self.ui.StartDemo2Btn.setDisabled(True)
+            elif (server.readBool(9000)[0] is not True and server.readBool(9001)[0] is not True
+                and server.readBool(9003)[0] is not True):
+                self.ui.StartDemo1Btn.setDisabled(False)
+                self.ui.StartDemo2Btn.setDisabled(False)
+                self.ui.StartDemo3Btn.setDisabled(False)
+
+    def startConnectingThread(self):
+        self.connectingThread.start()
+        return self
+
+    def connectingServer(self):
+        while True:
+            if self.ui.modbusConnectBtn.isDown():
+                server.connectServer()
+            if self.ui.modbusDisconnectBtn.isDown():
+                server.disconnect()
+            if server.isConnected():
+                self.ui.label_12.setText("Modbus is connected")
+            else:
+                self.ui.label_12.setText("Modbus is not connected")
+
 # Main function for running the GUI Application
 if __name__ == '__main__':
     import sys
     app = QtWidgets.QApplication(sys.argv)
     mySW = ControlMainWindow()
     mySW.show()
+
     sys.exit(app.exec_())
