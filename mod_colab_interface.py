@@ -192,7 +192,7 @@ class Ui_MainWindow(object):
         self.AboutPageBtn.setIconSize(QtCore.QSize(40, 40))
         self.AboutPageBtn.setObjectName("AboutPageBtn")
         self.verticalLayout.addWidget(self.AboutPageBtn)
-        self.gridLayout_3.addWidget(self.PageSelectors, 1, 0, 1, 1)
+        self.gridLayout_3.addWidget(self.PageSelectors, 2, 0, 1, 1)
         self.gridLayout_2.addWidget(self.WidgetJustifier, 0, 0, 1, 1)
         self.gridLayout.addWidget(self.WidgetMenu, 0, 0, 1, 1)
         self.label_12 = QtWidgets.QLabel(self.WidgetJustifier)
@@ -205,7 +205,7 @@ class Ui_MainWindow(object):
         self.label_12.setAlignment(QtCore.Qt.AlignCenter)
         self.label_12.setObjectName("label_12")
         self.label_12.setMaximumSize(QtCore.QSize(16777215, 30))
-        self.gridLayout_3.addWidget(self.label_12, 4, 0, 1, 1)
+        self.gridLayout_3.addWidget(self.label_12, 5, 0, 1, 1)
         self.gridLayout_2.addWidget(self.WidgetJustifier, 0, 0, 1, 1)
         self.gridLayout.addWidget(self.WidgetMenu, 0, 0, 1, 1)
         self.modbusConnectBtn = QtWidgets.QPushButton(self.WidgetJustifier)
@@ -229,7 +229,7 @@ class Ui_MainWindow(object):
                                             "padding: 4px;"
                                             "}")
         self.modbusConnectBtn.setMinimumSize(QtCore.QSize(16777215, 40))
-        self.gridLayout_3.addWidget(self.modbusConnectBtn, 2, 0, 1, 1)
+        self.gridLayout_3.addWidget(self.modbusConnectBtn, 3, 0, 1, 1)
         self.gridLayout_2.addWidget(self.WidgetJustifier, 0, 0, 1, 1)
         self.gridLayout.addWidget(self.WidgetMenu, 0, 0, 1, 1)
         self.modbusDisconnectBtn = QtWidgets.QPushButton(self.WidgetJustifier)
@@ -253,7 +253,21 @@ class Ui_MainWindow(object):
                                                "padding: 4px;"
                                                "}")
         self.modbusDisconnectBtn.setMinimumSize(QtCore.QSize(16777215, 40))
-        self.gridLayout_3.addWidget(self.modbusDisconnectBtn, 3, 0, 1, 1)
+        self.gridLayout_3.addWidget(self.modbusDisconnectBtn, 4, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.WidgetJustifier, 0, 0, 1, 1)
+        self.gridLayout.addWidget(self.WidgetMenu, 0, 0, 1, 1)
+        self.whichDemoIsRunLabel = QtWidgets.QLabel(self.WidgetJustifier)
+        self.whichDemoIsRunLabel.setMinimumSize(QtCore.QSize(0, 30))
+        font = QtGui.QFont()
+        font.setFamily("Andale Mono")
+        font.setPointSize(16)
+        font.setItalic(False)
+        self.whichDemoIsRunLabel.setFont(font)
+        self.whichDemoIsRunLabel.setFrameShape(QtWidgets.QFrame.WinPanel)
+        self.whichDemoIsRunLabel.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.whichDemoIsRunLabel.setAlignment(QtCore.Qt.AlignCenter)
+        self.whichDemoIsRunLabel.setObjectName("whichDemoIsRunLabel")
+        self.gridLayout_3.addWidget(self.whichDemoIsRunLabel, 1, 0, 1, 1)
         self.gridLayout_2.addWidget(self.WidgetJustifier, 0, 0, 1, 1)
         self.gridLayout.addWidget(self.WidgetMenu, 0, 0, 1, 1)
         self.Widget_Contents = QtWidgets.QWidget(self.centralwidget)
@@ -706,6 +720,9 @@ class Ui_MainWindow(object):
         self.label_6 = QtWidgets.QLabel(self.AboutPage)
         self.label_6.setObjectName("label_6")
         self.verticalLayout_6.addWidget(self.label_6)
+        self.label_14 = QtWidgets.QLabel(self.AboutPage)
+        self.label_14.setObjectName("label_14")
+        self.verticalLayout_6.addWidget(self.label_14)
         self.label_4 = QtWidgets.QLabel(self.AboutPage)
         self.label_4.setObjectName("label_4")
         self.verticalLayout_6.addWidget(self.label_4)
@@ -731,48 +748,57 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
         # Creating lists containing the status of the robots in the different demos
-        self.statusListRobo1Demo1 = ["Doing something 1",
+        self.statusListRobo1Demo1 = ["Demo 1 is not running",
                                     "Doing something else 2",
                                     "Messing around 3",
                                     "Making robot movements 4",
                                     "Hello world 5"]
 
-        self.statusListRobo2Demo1 = ["Doing something 1",
+        self.statusListRobo2Demo1 = ["Demo 1 is not running",
                                     "Doing something else 2",
                                     "Messing around 3",
                                     "Making robot movements 4",
                                     "Hello world 5"]
 
-        self.statusListRobo1Demo2 = ["Doing something 1",
+        self.statusListRobo1Demo2 = ["Demo 2 is not running",
                                     "Doing something else 2",
                                     "Messing around 3",
                                     "Making robot movements 4",
                                     "Hello world 5"]
 
-        self.statusListRobo2Demo2 = ["Doing something 1",
+        self.statusListRobo2Demo2 = ["Demo 2 is not running",
                                     "Doing something else 2",
                                     "Messing around 3",
                                     "Making robot movements 4",
                                     "Hello world 5"]
 
-        self.statusListRobo1Demo3 = ["Doing something 1",
-                                    "Doing something else 2",
-                                    "Messing around 3",
-                                    "Making robot movements 4",
-                                    "Hello world 5"]
+        self.statusListRobo1Demo3 = ["Demo 3 is not running",
+                                    "Starting demo 3",
+                                    "Picking up first planet gear",
+                                    "Waiting for Robot 2 to reach collaborative area",
+                                    "Placing first planet gear",
+                                    "Picking up second planet gear",
+                                    "Placing second planet gear",
+                                    "Picking up third planet gear",
+                                    "Placing third planet gear",
+                                    "Picking up sun gear",
+                                    "Placing the sun gear",
+                                    "Locking sun gear"]
 
-        self.statusListRobo2Demo3 = ["Doing something 1",
-                                    "Doing something else 2",
-                                    "Messing around 3",
-                                    "Making robot movements 4",
-                                    "Hello world 5"]
+        self.statusListRobo2Demo3 = ["Demo 3 is not running",
+                                    "Starting demo 3",
+                                    "Confirmed correct tray",
+                                    "Confirmed wrong tray",
+                                    "Picking up Grip axel",
+                                    "Reached collaborstive area, waiting for Robot 1 to finish task."]
 
-        # Method for setting the text of labels in the GUI
+        # Method for setting the text of labels and buttons in the GUI
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label.setText(_translate("MainWindow", "Collaborative Robots in Manulab"))
         self.logo.setText(_translate("MainWindow", "<html><head/><body><p><img src=\":/LogoPrefix/Intro-Pic-Cobot-Page-1.png\"/></p></body></html>"))
+        self.whichDemoIsRunLabel.setText(_translate("MainWindow", "No demo is currently running"))
         self.Demo1PageBtn.setToolTip(_translate("MainWindow", "<html><head/><body><p><br/></p></body></html>"))
         self.label_12.setText(_translate("MainWindow", "Modbus is not connected"))
         self.Demo1PageBtn.setText(_translate("MainWindow", "Demo 1: Easy Collaborative Task"))
@@ -798,9 +824,11 @@ class Ui_MainWindow(object):
         self.StopDemo3Btn.setText(_translate("MainWindow", "Stop Demo 3"))
         self.AboutLabel.setText(_translate("MainWindow", "About this project"))
         self.AboutTxt.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:18pt;\">This system was created by a group of automation engineering students at NTNU in Aalesund.<br/>The system was created as part of a project in the Mechatronics subject.<br/>The purpose of the project was to make the robots collaborate on a complex task, using vision and a force sensor.</span></p><p><span style=\" font-size:18pt;\">The group consisted of the following students:<br/>Isak Gamnes Sneltvedt<br/>Erik Bjørnøy<br/>Erlend Holseker<br/>Arvin Khodabandeh</span></p><p><span style=\" font-size:18pt;\">The collaborative robots in the Manulab are delivered by Omron.</span></p></body></html>"))
-        self.label_3.setText(_translate("MainWindow", "<html><head/><body><p><img src=\":/LogoPrefix/robot_PNG79.png\"/></p></body></html>"))
+        #self.label_3.setText(_translate("MainWindow", "<html><head/><body><p><img src=\":/LogoPrefix/robot_PNG79.png\"/></p></body></html>"))
+        self.label_3.setText(_translate("MainWindow", "<html><head/><body><p><img src=\":/LogoPrefix/thinkingrobot.png\"/></p></body></html>"))
         self.label_5.setText(_translate("MainWindow", "<html><head/><body><p><img src=\":/LogoPrefix/standard_logo_ntnu_u-slagord.png\"/></p></body></html>"))
         self.label_6.setText(_translate("MainWindow", "<html><head/><body><p><img src=\":/LogoPrefix/OMRON_Logo.svg.png\"/></p></body></html>"))
+        self.label_14.setText(_translate("MainWindow", "<html><head/><body><p><img src=\":/LogoPrefix/amatec.png\"/></p></body></html>"))
         self.label_4.setText(_translate("MainWindow", "<html><head/><body><p><img src=\":/LogoPrefix/Python_logo_and_wordmark.svg.png\"/></p></body></html>"))
         self.label_2.setText(_translate("MainWindow", "This HMI is powered by Python."))
 import Logo_rc
@@ -816,6 +844,7 @@ class ControlMainWindow(QtWidgets.QMainWindow):
         self.listenThread.daemon = True
         self.startListenThread()
 
+        # Starting a thread to use for monitoring server connection
         self.connectingThread = Thread(target=self.connectingServer, args=())
         self.connectingThread.daemon = True
         self.startConnectingThread()
@@ -834,9 +863,6 @@ class ControlMainWindow(QtWidgets.QMainWindow):
         self.ui.StartDemo3Btn.pressed.connect(lambda : server.sendBool(9002, [bool(True)]))
         self.ui.StopDemo3Btn.pressed.connect(lambda : server.sendBool(9002, [bool(False)]))
 
-        self.ui.modbusConnectBtn.clicked.connect(lambda : server.connectServer())
-        self.ui.modbusDisconnectBtn.clicked.connect(lambda : server.disconnect())
-
     def startListenThread(self):
         self.listenThread.start()
         return self
@@ -850,34 +876,46 @@ class ControlMainWindow(QtWidgets.QMainWindow):
             self.ui.ModbusInputDemo3Rob1.setText(self.ui.statusListRobo1Demo3[server.readInt(1004)[0]])
             self.ui.ModbusInputDemo3Rob2.setText(self.ui.statusListRobo2Demo3[server.readInt(1005)[0]])
 
-            if server.readBool(9000)[0]:
+            if server.readBool(9005)[0]:
                 self.ui.StartDemo2Btn.setDisabled(True)
                 self.ui.StartDemo3Btn.setDisabled(True)
-            elif server.readBool(9001)[0]:
+                self.ui.whichDemoIsRunLabel.setText("Demo 1 is running")
+            elif server.readBool(9006)[0]:
                 self.ui.StartDemo1Btn.setDisabled(True)
                 self.ui.StartDemo3Btn.setDisabled(True)
-            elif server.readBool(9002)[0]:
+                self.ui.whichDemoIsRunLabel.setText("Demo 2 is running")
+            elif server.readBool(9007)[0]:
                 self.ui.StartDemo1Btn.setDisabled(True)
                 self.ui.StartDemo2Btn.setDisabled(True)
-            elif (server.readBool(9000)[0] is not True and server.readBool(9001)[0] is not True
-                and server.readBool(9003)[0] is not True):
+                self.ui.whichDemoIsRunLabel.setText("Demo 3 is running")
+            elif (server.readBool(9005)[0] is not True and server.readBool(9006)[0] is not True
+                and server.readBool(9007)[0] is not True):
                 self.ui.StartDemo1Btn.setDisabled(False)
                 self.ui.StartDemo2Btn.setDisabled(False)
                 self.ui.StartDemo3Btn.setDisabled(False)
+                self.ui.whichDemoIsRunLabel.setText("No demo is currently running")
 
     def startConnectingThread(self):
         self.connectingThread.start()
         return self
 
     def connectingServer(self):
+        serverHasBeenConnected = False
         while True:
             if self.ui.modbusConnectBtn.isDown():
-                server.connectServer()
+                try:
+                    server.connectServer()
+                except Exception as e:
+                    print(e)
+                    self.ui.label_12.setText("Unable to connect. Check connection.")
+
             if self.ui.modbusDisconnectBtn.isDown():
                 server.disconnect()
             if server.isConnected():
                 self.ui.label_12.setText("Modbus is connected")
-            else:
+                serverHasBeenConnected = True
+
+            if server.isConnected() is not True and serverHasBeenConnected:
                 self.ui.label_12.setText("Modbus is not connected")
 
 # Main function for running the GUI Application

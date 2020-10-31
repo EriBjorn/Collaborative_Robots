@@ -36,14 +36,17 @@
        <item row="0" column="0">
         <widget class="QWidget" name="WidgetJustifier" native="true">
          <layout class="QGridLayout" name="gridLayout_3">
-          <item row="2" column="0">
+          <item row="3" column="0">
            <widget class="QPushButton" name="modbusConnectBtn">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(0, 226, 0)</string>
+            </property>
             <property name="text">
              <string>Connect Modbus Server</string>
             </property>
            </widget>
           </item>
-          <item row="5" column="0">
+          <item row="6" column="0">
            <widget class="QLabel" name="label_12">
             <property name="font">
              <font>
@@ -51,7 +54,7 @@
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">color: red;</string>
+             <string notr="true"/>
             </property>
             <property name="frameShape">
              <enum>QFrame::WinPanel</enum>
@@ -67,7 +70,17 @@
             </property>
            </widget>
           </item>
-          <item row="1" column="0">
+          <item row="4" column="0">
+           <widget class="QPushButton" name="modbusDisconnectBtn">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 83, 108)</string>
+            </property>
+            <property name="text">
+             <string>Disconnect Modbus Server</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
            <widget class="QFrame" name="PageSelectors">
             <property name="styleSheet">
              <string notr="true">background-color:rgb(153, 153, 153);
@@ -268,10 +281,32 @@ padding: 4px;</string>
             </layout>
            </widget>
           </item>
-          <item row="3" column="0">
-           <widget class="QPushButton" name="modbusDisconnectBtn">
+          <item row="1" column="0">
+           <widget class="QLabel" name="whichDemoIsRunLabel">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Andale Mono</family>
+              <pointsize>16</pointsize>
+              <italic>false</italic>
+             </font>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::WinPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
             <property name="text">
-             <string>Disconnect Modbus Server</string>
+             <string>No demo is currently running</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
             </property>
            </widget>
           </item>
@@ -296,7 +331,7 @@ padding: 4px;</string>
        <item>
         <widget class="QStackedWidget" name="WidgetPages">
          <property name="currentIndex">
-          <number>1</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="Demo1Page">
           <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -943,8 +978,14 @@ padding: 4px;</string>
             <layout class="QHBoxLayout" name="horizontalLayout_2">
              <item>
               <widget class="QLabel" name="label_3">
+               <property name="frameShape">
+                <enum>QFrame::WinPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Sunken</enum>
+               </property>
                <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/LogoPrefix/robot_PNG79.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/LogoPrefix/thinkingrobot.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
               </widget>
              </item>
@@ -961,6 +1002,13 @@ padding: 4px;</string>
                 <widget class="QLabel" name="label_6">
                  <property name="text">
                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/LogoPrefix/OMRON_Logo.svg.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_14">
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/LogoPrefix/amatec.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>

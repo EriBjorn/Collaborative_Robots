@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="LogoPrefix">
+    <file>thinkingrobot.png</file>
+    <file>amatec.png</file>
     <file>start_icon.png</file>
     <file>stop_icon.png</file>
     <file>about-512.png</file>

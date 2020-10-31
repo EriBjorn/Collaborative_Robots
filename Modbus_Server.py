@@ -30,7 +30,11 @@ class ModbusTCPServer(object):
 		"""
 		Starts the server
 		"""
-		self.server.start()
+		try:
+			self.server.start()
+		except Exception as e:
+			raise Exception("Seems like the server can't assign the requested address.")
+
 
 	def isConnected(self):
 		"""
@@ -48,7 +52,7 @@ class ModbusTCPServer(object):
 		"""
 
 		self.server.stop()
-		return server.is_run
+		return self.server.is_run
 
 	def sendBool(self, register_adrs, value):
 		"""
