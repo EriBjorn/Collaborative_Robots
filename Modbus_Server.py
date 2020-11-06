@@ -33,7 +33,7 @@ class ModbusTCPServer(object):
 		try:
 			self.server.start()
 		except Exception as e:
-			raise Exception("Seems like the server can't assign the requested address.")
+			raise Exception("Seems like the server can't assign the requested address. Try using sudo command.")
 
 
 	def isConnected(self):

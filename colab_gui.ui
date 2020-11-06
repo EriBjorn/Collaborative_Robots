@@ -331,7 +331,7 @@ padding: 4px;</string>
        <item>
         <widget class="QStackedWidget" name="WidgetPages">
          <property name="currentIndex">
-          <number>3</number>
+          <number>2</number>
          </property>
          <widget class="QWidget" name="Demo1Page">
           <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -876,6 +876,85 @@ padding: 4px;</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="MobRobFrame">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(179, 179, 179);
+border-style: inset;
+border-width: 2px;
+border-radius: 20px;
+border-color: grey;
+padding: 4px;</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::WinPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Sunken</enum>
+               </property>
+               <layout class="QVBoxLayout" name="MobileRobotFrame">
+                <item>
+                 <widget class="QLabel" name="MobRobStatusLabel">
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>100</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>24</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Mobile Robot</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="ModbusInputMobRob">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="MobRobConfirmBtn">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>50</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: lightgrey;
+border-style: outset;
+border-color: grey;
+border-width: 2px;
+border-radius: 10px;
+padding: 4px;
+
+QPushbutton::pressed
+{
+background-color: grey;
+border-style: inset;
+border-color: grey;
+border-width: 2px;
+border-radius: 10px;
+padding: 4px;
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>Confirm Parts Placed</string>
                   </property>
                  </widget>
                 </item>

@@ -453,6 +453,51 @@ class Ui_MainWindow(object):
         self.ModbusInputDemo3Rob2.setObjectName("ModbusInputDemo3Rob2")
         self.verticalLayout_12.addWidget(self.ModbusInputDemo3Rob2)
         self.horizontalLayout_5.addWidget(self.verticalFrame_22)
+        self.MobRobFrame = QtWidgets.QFrame(self.Demo3Page)
+        self.MobRobFrame.setStyleSheet("background-color: rgb(179, 179, 179);\n"
+"border-style: inset;\n"
+"border-width: 2px;\n"
+"border-radius: 20px;\n"
+"border-color: grey;\n"
+"padding: 4px;")
+        self.MobRobFrame.setFrameShape(QtWidgets.QFrame.WinPanel)
+        self.MobRobFrame.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.MobRobFrame.setObjectName("MobRobFrame")
+        self.MobileRobotFrame = QtWidgets.QVBoxLayout(self.MobRobFrame)
+        self.MobileRobotFrame.setObjectName("MobileRobotFrame")
+        self.MobRobStatusLabel = QtWidgets.QLabel(self.MobRobFrame)
+        self.MobRobStatusLabel.setMaximumSize(QtCore.QSize(16777215, 100))
+        font = QtGui.QFont()
+        font.setPointSize(24)
+        self.MobRobStatusLabel.setFont(font)
+        self.MobRobStatusLabel.setAlignment(QtCore.Qt.AlignCenter)
+        self.MobRobStatusLabel.setObjectName("MobRobStatusLabel")
+        self.MobileRobotFrame.addWidget(self.MobRobStatusLabel)
+        self.ModbusInputMobRob = QtWidgets.QLabel(self.MobRobFrame)
+        self.ModbusInputMobRob.setText("")
+        self.ModbusInputMobRob.setObjectName("ModbusInputMobRob")
+        self.MobileRobotFrame.addWidget(self.ModbusInputMobRob)
+        self.MobRobConfirmBtn = QtWidgets.QPushButton(self.MobRobFrame)
+        self.MobRobConfirmBtn.setMinimumSize(QtCore.QSize(0, 50))
+        self.MobRobConfirmBtn.setStyleSheet("background-color: lightgrey;\n"
+                                            "border-style: outset;\n"
+                                            "border-color: grey;\n"
+                                            "border-width: 2px;\n"
+                                            "border-radius: 10px;\n"
+                                            "padding: 4px;\n"
+                                            "\n"
+                                            "QPushbutton::pressed\n"
+                                            "{\n"
+                                            "background-color: grey;\n"
+                                            "border-style: inset;\n"
+                                            "border-color: grey;\n"
+                                            "border-width: 2px;\n"
+                                            "border-radius: 10px;\n"
+                                            "padding: 4px;\n"
+                                            "}")
+        self.MobRobConfirmBtn.setObjectName("MobRobConfirmBtn")
+        self.MobileRobotFrame.addWidget(self.MobRobConfirmBtn)
+        self.horizontalLayout_5.addWidget(self.MobRobFrame)
         self.verticalLayout_4.addLayout(self.horizontalLayout_5)
         self.StartDemo3Btn = QtWidgets.QPushButton(self.Demo3Page)
         self.StartDemo3Btn.setMinimumSize(QtCore.QSize(0, 100))
@@ -493,6 +538,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.label_3 = QtWidgets.QLabel(self.AboutPage)
+        self.label_3.setFrameShape(QtWidgets.QFrame.WinPanel)
+        self.label_3.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.label_3.setObjectName("label_3")
         self.horizontalLayout_2.addWidget(self.label_3)
         self.verticalLayout_6 = QtWidgets.QVBoxLayout()
@@ -526,7 +573,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.WidgetPages.setCurrentIndex(3)
+        self.WidgetPages.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -556,11 +603,13 @@ class Ui_MainWindow(object):
         self.Demo3Label.setText(_translate("MainWindow", "Demo 3: Advanced Gear Assembly"))
         self.label_10.setText(_translate("MainWindow", "Current task of Robot 1"))
         self.label_13.setText(_translate("MainWindow", "Current task of Robot 2"))
+        self.MobRobStatusLabel.setText(_translate("MainWindow", "Mobile Robot"))
+        self.MobRobConfirmBtn.setText(_translate("MainWindow", "Confirm Parts Placed"))
         self.StartDemo3Btn.setText(_translate("MainWindow", "Start Demo 3"))
         self.StopDemo3Btn.setText(_translate("MainWindow", "Stop Demo 3"))
         self.AboutLabel.setText(_translate("MainWindow", "About this project"))
         self.AboutTxt.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:18pt;\">This system was created by a group of automation engineering students at NTNU in Aalesund.<br/>The system was created as part of a project in the Mechatronics subject.<br/>The purpose of the project was to make the robots collaborate on a complex task, using vision and a force sensor.</span></p><p><span style=\" font-size:18pt;\">The group consisted of the following students:<br/>Isak Gamnes Sneltvedt<br/>Erik Bjørnøy<br/>Erlend Holseker<br/>Arvin Khodabandeh</span></p><p><span style=\" font-size:18pt;\">The collaborative robots in the Manulab are delivered by Omron.</span></p></body></html>"))
-        self.label_3.setText(_translate("MainWindow", "<html><head/><body><p><img src=\":/LogoPrefix/robothandinhand.png\"/></p></body></html>"))
+        self.label_3.setText(_translate("MainWindow", "<html><head/><body><p><img src=\":/LogoPrefix/thinkingrobot.png\"/></p></body></html>"))
         self.label_5.setText(_translate("MainWindow", "<html><head/><body><p><img src=\":/LogoPrefix/standard_logo_ntnu_u-slagord.png\"/></p></body></html>"))
         self.label_6.setText(_translate("MainWindow", "<html><head/><body><p><img src=\":/LogoPrefix/OMRON_Logo.svg.png\"/></p></body></html>"))
         self.label_14.setText(_translate("MainWindow", "<html><head/><body><p><img src=\":/LogoPrefix/amatec.png\"/></p></body></html>"))

@@ -632,6 +632,57 @@ class Ui_MainWindow(object):
         self.ModbusInputDemo3Rob2.setObjectName("ModbusInputDemo3Rob2")
         self.verticalLayout_12.addWidget(self.ModbusInputDemo3Rob2)
         self.horizontalLayout_5.addWidget(self.verticalFrame_22)
+        self.MobRobFrame = QtWidgets.QFrame(self.Demo3Page)
+        self.MobRobFrame.setStyleSheet("background-color: rgb(179, 179, 179);\n"
+                                       "border-style: inset;\n"
+                                       "border-width: 2px;\n"
+                                       "border-radius: 20px;\n"
+                                       "border-color: grey;\n"
+                                       "padding: 4px;")
+        self.MobRobFrame.setFrameShape(QtWidgets.QFrame.WinPanel)
+        self.MobRobFrame.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.MobRobFrame.setObjectName("MobRobFrame")
+        self.MobileRobotFrame = QtWidgets.QVBoxLayout(self.MobRobFrame)
+        self.MobileRobotFrame.setObjectName("MobileRobotFrame")
+        self.MobRobStatusLabel = QtWidgets.QLabel(self.MobRobFrame)
+        self.MobRobStatusLabel.setMaximumSize(QtCore.QSize(16777215, 100))
+        font = QtGui.QFont()
+        font.setPointSize(24)
+        self.MobRobStatusLabel.setFont(font)
+        self.MobRobStatusLabel.setAlignment(QtCore.Qt.AlignCenter)
+        self.MobRobStatusLabel.setObjectName("MobRobStatusLabel")
+        self.MobileRobotFrame.addWidget(self.MobRobStatusLabel)
+        self.ModbusInputMobRob = QtWidgets.QLabel(self.MobRobFrame)
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        self.ModbusInputMobRob.setFont(font)
+        self.ModbusInputMobRob.setText("")
+        self.ModbusInputMobRob.setAlignment(QtCore.Qt.AlignCenter)
+        self.ModbusInputMobRob.setObjectName("ModbusInputMobRob")
+        self.MobileRobotFrame.addWidget(self.ModbusInputMobRob)
+        self.MobRobConfirmBtn = QtWidgets.QPushButton(self.MobRobFrame)
+        self.MobRobConfirmBtn.setMinimumSize(QtCore.QSize(0, 50))
+        self.MobRobConfirmBtn.setStyleSheet("QPushButton"
+                                            "{"
+                                            "background-color : rgb(170, 170, 170);"
+                                            "border-style: outset;\n"
+                                            "border-width: 1px;\n"
+                                            "border-radius: 10px;\n"
+                                            "border-color: grey;\n"
+                                            "padding: 4px;"
+                                            "}"
+                                            "QPushButton::pressed"
+                                            "{"
+                                            "background-color : rgb(160, 160, 160);"
+                                            "border-style: inset;\n"
+                                            "border-width: 1px;\n"
+                                            "border-radius: 10px;\n"
+                                            "border-color: grey;\n"
+                                            "padding: 4px;"
+                                            "}")
+        self.MobRobConfirmBtn.setObjectName("MobRobConfirmBtn")
+        self.MobileRobotFrame.addWidget(self.MobRobConfirmBtn)
+        self.horizontalLayout_5.addWidget(self.MobRobFrame)
         self.verticalLayout_4.addLayout(self.horizontalLayout_5)
         self.StartDemo3Btn = QtWidgets.QPushButton(self.Demo3Page)
         self.StartDemo3Btn.setMinimumSize(QtCore.QSize(0, 110))
@@ -792,6 +843,19 @@ class Ui_MainWindow(object):
                                     "Picking up Grip axel",
                                     "Reached collaborstive area, waiting for Robot 1 to finish task."]
 
+        self.statusListMobRob = ["Demo 3 is not running",
+                                 "Going to pick up point",
+                                 "Waiting for parts to be \n placed on robot. \n\n Press \n \"Confirm Parts Placed\" \n when parts are placed.",
+                                 "Going to Robot 2",
+                                 "Waiting for Robot 2 \n to pick up parts",
+                                 "Going to Robot 1",
+                                 "Waiting for Robot 1 \n to pick up parts",
+                                 "Going to Robot 2",
+                                 "Waiting for Robot 2 \n to place finished product",
+                                 "Going to drop off point",
+                                 "Arrived at drop off point",
+                                 "Mission Accomplished"]
+
         # Method for setting the text of labels and buttons in the GUI
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -820,6 +884,8 @@ class Ui_MainWindow(object):
         self.Demo3Label.setText(_translate("MainWindow", "Demo 3: Advanced Gear Assembly"))
         self.label_10.setText(_translate("MainWindow", "Current task of Robot 1"))
         self.label_13.setText(_translate("MainWindow", "Current task of Robot 2"))
+        self.MobRobStatusLabel.setText(_translate("MainWindow", "Mobile Robot"))
+        self.MobRobConfirmBtn.setText(_translate("MainWindow", "Confirm Parts Placed"))
         self.StartDemo3Btn.setText(_translate("MainWindow", "Start Demo 3"))
         self.StopDemo3Btn.setText(_translate("MainWindow", "Stop Demo 3"))
         self.AboutLabel.setText(_translate("MainWindow", "About this project"))
@@ -862,6 +928,7 @@ class ControlMainWindow(QtWidgets.QMainWindow):
         self.ui.StopDemo2Btn.pressed.connect(lambda : server.sendBool(9001, [bool(False)]))
         self.ui.StartDemo3Btn.pressed.connect(lambda : server.sendBool(9002, [bool(True)]))
         self.ui.StopDemo3Btn.pressed.connect(lambda : server.sendBool(9002, [bool(False)]))
+        #self.ui.MobRobConfirmBtn.pressed.connect(lambda : server.sendBool(9003, [bool(True)]))
 
     def startListenThread(self):
         self.listenThread.start()
@@ -875,6 +942,7 @@ class ControlMainWindow(QtWidgets.QMainWindow):
             self.ui.ModbusInputDemo2Rob2.setText(self.ui.statusListRobo2Demo2[server.readInt(1003)[0]])
             self.ui.ModbusInputDemo3Rob1.setText(self.ui.statusListRobo1Demo3[server.readInt(1004)[0]])
             self.ui.ModbusInputDemo3Rob2.setText(self.ui.statusListRobo2Demo3[server.readInt(1005)[0]])
+            self.ui.ModbusInputMobRob.setText(self.ui.statusListMobRob[server.readInt(1006)[0]])
 
             if server.readBool(9005)[0]:
                 self.ui.StartDemo2Btn.setDisabled(True)
@@ -894,6 +962,11 @@ class ControlMainWindow(QtWidgets.QMainWindow):
                 self.ui.StartDemo2Btn.setDisabled(False)
                 self.ui.StartDemo3Btn.setDisabled(False)
                 self.ui.whichDemoIsRunLabel.setText("No demo is currently running")
+
+            if self.ui.MobRobConfirmBtn.isDown():
+                server.sendBool(9003, [bool(True)])
+            else:
+                server.sendBool(9003, [bool(False)])
 
     def startConnectingThread(self):
         self.connectingThread.start()
@@ -926,3 +999,4 @@ if __name__ == '__main__':
     mySW.show()
 
     sys.exit(app.exec_())
+    server.disconnect()
