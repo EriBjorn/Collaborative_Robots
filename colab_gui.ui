@@ -823,6 +823,37 @@ padding: 4px;</string>
                   </property>
                  </widget>
                 </item>
+                <item>
+                 <widget class="QPushButton" name="AssemblyConfirmBtn">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>50</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: lightgrey;
+border-style: outset;
+border-color: grey;
+border-width: 2px;
+border-radius: 10px;
+padding: 4px;
+
+QPushbutton::pressed
+{
+background-color: grey;
+border-style: inset;
+border-color: grey;
+border-width: 2px;
+border-radius: 10px;
+padding: 4px;
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>Confirm Assembly</string>
+                  </property>
+                 </widget>
+                </item>
                </layout>
               </widget>
              </item>

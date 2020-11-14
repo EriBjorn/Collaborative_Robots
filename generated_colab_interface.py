@@ -423,6 +423,26 @@ class Ui_MainWindow(object):
         self.ModbusInputDemo3Rob1.setAlignment(QtCore.Qt.AlignCenter)
         self.ModbusInputDemo3Rob1.setObjectName("ModbusInputDemo3Rob1")
         self.verticalLayout_11.addWidget(self.ModbusInputDemo3Rob1)
+        self.AssemblyConfirmBtn = QtWidgets.QPushButton(self.verticalFrame2)
+        self.AssemblyConfirmBtn.setMinimumSize(QtCore.QSize(0, 50))
+        self.AssemblyConfirmBtn.setStyleSheet("background-color: lightgrey;\n"
+"border-style: outset;\n"
+"border-color: grey;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"padding: 4px;\n"
+"\n"
+"QPushbutton::pressed\n"
+"{\n"
+"background-color: grey;\n"
+"border-style: inset;\n"
+"border-color: grey;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"padding: 4px;\n"
+"}")
+        self.AssemblyConfirmBtn.setObjectName("AssemblyConfirmBtn")
+        self.verticalLayout_11.addWidget(self.AssemblyConfirmBtn)
         self.horizontalLayout_5.addWidget(self.verticalFrame2)
         self.verticalFrame_22 = QtWidgets.QFrame(self.Demo3Page)
         self.verticalFrame_22.setStyleSheet("background-color: rgb(179, 179, 179);\n"
@@ -480,21 +500,21 @@ class Ui_MainWindow(object):
         self.MobRobConfirmBtn = QtWidgets.QPushButton(self.MobRobFrame)
         self.MobRobConfirmBtn.setMinimumSize(QtCore.QSize(0, 50))
         self.MobRobConfirmBtn.setStyleSheet("background-color: lightgrey;\n"
-                                            "border-style: outset;\n"
-                                            "border-color: grey;\n"
-                                            "border-width: 2px;\n"
-                                            "border-radius: 10px;\n"
-                                            "padding: 4px;\n"
-                                            "\n"
-                                            "QPushbutton::pressed\n"
-                                            "{\n"
-                                            "background-color: grey;\n"
-                                            "border-style: inset;\n"
-                                            "border-color: grey;\n"
-                                            "border-width: 2px;\n"
-                                            "border-radius: 10px;\n"
-                                            "padding: 4px;\n"
-                                            "}")
+"border-style: outset;\n"
+"border-color: grey;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"padding: 4px;\n"
+"\n"
+"QPushbutton::pressed\n"
+"{\n"
+"background-color: grey;\n"
+"border-style: inset;\n"
+"border-color: grey;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"padding: 4px;\n"
+"}")
         self.MobRobConfirmBtn.setObjectName("MobRobConfirmBtn")
         self.MobileRobotFrame.addWidget(self.MobRobConfirmBtn)
         self.horizontalLayout_5.addWidget(self.MobRobFrame)
@@ -602,6 +622,7 @@ class Ui_MainWindow(object):
         self.StopDemo2Btn.setText(_translate("MainWindow", "Stop Demo 2"))
         self.Demo3Label.setText(_translate("MainWindow", "Demo 3: Advanced Gear Assembly"))
         self.label_10.setText(_translate("MainWindow", "Current task of Robot 1"))
+        self.AssemblyConfirmBtn.setText(_translate("MainWindow", "Confirm Assembly"))
         self.label_13.setText(_translate("MainWindow", "Current task of Robot 2"))
         self.MobRobStatusLabel.setText(_translate("MainWindow", "Mobile Robot"))
         self.MobRobConfirmBtn.setText(_translate("MainWindow", "Confirm Parts Placed"))

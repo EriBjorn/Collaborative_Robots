@@ -602,6 +602,28 @@ class Ui_MainWindow(object):
         self.ModbusInputDemo3Rob1.setAlignment(QtCore.Qt.AlignCenter)
         self.ModbusInputDemo3Rob1.setObjectName("ModbusInputDemo3Rob1")
         self.verticalLayout_11.addWidget(self.ModbusInputDemo3Rob1)
+        self.AssemblyConfirmBtn = QtWidgets.QPushButton(self.verticalFrame2)
+        self.AssemblyConfirmBtn.setMinimumSize(QtCore.QSize(0, 50))
+        self.AssemblyConfirmBtn.setStyleSheet("QPushButton"
+                                              "{"
+                                              "background-color : rgb(170, 170, 170);"
+                                              "border-style: outset;\n"
+                                              "border-width: 1px;\n"
+                                              "border-radius: 10px;\n"
+                                              "border-color: grey;\n"
+                                              "padding: 4px;"
+                                              "}"
+                                              "QPushButton::pressed"
+                                              "{"
+                                              "background-color : rgb(160, 160, 160);"
+                                              "border-style: inset;\n"
+                                              "border-width: 1px;\n"
+                                              "border-radius: 10px;\n"
+                                              "border-color: grey;\n"
+                                              "padding: 4px;"
+                                              "}")
+        self.AssemblyConfirmBtn.setObjectName("AssemblyConfirmBtn")
+        self.verticalLayout_11.addWidget(self.AssemblyConfirmBtn)
         self.horizontalLayout_5.addWidget(self.verticalFrame2)
         self.verticalFrame_22 = QtWidgets.QFrame(self.Demo3Page)
         self.verticalFrame_22.setStyleSheet("background-color: rgb(179, 179, 179);\n"
@@ -800,10 +822,17 @@ class Ui_MainWindow(object):
 
         # Creating lists containing the status of the robots in the different demos
         self.statusListRobo1Demo1 = ["Demo 1 is not running",
-                                    "Doing something else 2",
-                                    "Messing around 3",
-                                    "Making robot movements 4",
-                                    "Hello world 5"]
+                                    "Starting demo 1",
+                                    "Localizing first square",
+                                    "Gripping first square",
+                                    "Waiting for robot 2 to get ready",
+                                    "Localizing landmark on square tray",
+                                    "Placing first square in tray",
+                                    "Localizing second square",
+                                    "Gripping second square",
+                                    "Placing second square in tray",
+                                    "Grabbing the square tray",
+                                    "Putting down the square tray"]
 
         self.statusListRobo2Demo1 = ["Demo 1 is not running",
                                     "Doing something else 2",
@@ -825,23 +854,44 @@ class Ui_MainWindow(object):
 
         self.statusListRobo1Demo3 = ["Demo 3 is not running",
                                     "Starting demo 3",
+                                    "Waiting for Robot 2 to scan \n landmark",
+                                    "Waiting for mobile robot",
+                                    "Scanning tray",
                                     "Picking up first planet gear",
-                                    "Waiting for Robot 2 to reach collaborative area",
+                                    "Waiting for Robot 2 to reach \n collaborative area",
                                     "Placing first planet gear",
                                     "Picking up second planet gear",
                                     "Placing second planet gear",
                                     "Picking up third planet gear",
                                     "Placing third planet gear",
                                     "Picking up sun gear",
-                                    "Placing the sun gear",
-                                    "Locking sun gear"]
+                                    "Inserting the sun gear",
+                                    "Locking sun gear ring",
+                                    "Picking up internal assembly",
+                                    "Waiting for ring gear",
+                                    "Aligning internal gear",
+                                    "Inserting internal gear \n into ring gear",
+                                    "Confirm correct placement \n of internal gear assembly",
+                                    "Robot 1 finished task"]
 
         self.statusListRobo2Demo3 = ["Demo 3 is not running",
                                     "Starting demo 3",
-                                    "Confirmed correct tray",
-                                    "Confirmed wrong tray",
-                                    "Picking up Grip axel",
-                                    "Reached collaborstive area, waiting for Robot 1 to finish task."]
+                                    "Waiting for Robot 1 to be \n ready for landmark configuration",
+                                    "Scanning landmark on Robot 1",
+                                    "Waiting for mobile robot",
+                                    "Scanning landmark on mobile robot",
+                                    "Wrong tray scanned. \n Scanning other tray",
+                                    "Correct tray confirmed",
+                                    "Picking up planet gear holder",
+                                    "Waiting for Robot 1 to \n finish task",
+                                    "Moving to remove grippers",
+                                    "Grippers removed.\n Scanning tray on mobile robot",
+                                    "Picking up ring gear",
+                                    "Moving to collaborative area",
+                                    "Moving to mobile robot \n to place finished product",
+                                    "Finished product placed",
+                                    "Robot 2 finished task",
+                                    "Moving to scan landmark \n on Robot 1"]
 
         self.statusListMobRob = ["Demo 3 is not running",
                                  "Going to pick up point",
@@ -854,7 +904,8 @@ class Ui_MainWindow(object):
                                  "Waiting for Robot 2 \n to place finished product",
                                  "Going to drop off point",
                                  "Arrived at drop off point",
-                                 "Mission Accomplished"]
+                                 "Mission Accomplished",
+                                 "Going to idle"]
 
         # Method for setting the text of labels and buttons in the GUI
     def retranslateUi(self, MainWindow):
@@ -883,6 +934,7 @@ class Ui_MainWindow(object):
         self.StopDemo2Btn.setText(_translate("MainWindow", "Stop Demo 2"))
         self.Demo3Label.setText(_translate("MainWindow", "Demo 3: Advanced Gear Assembly"))
         self.label_10.setText(_translate("MainWindow", "Current task of Robot 1"))
+        self.AssemblyConfirmBtn.setText(_translate("MainWindow", "Confirm Assembly"))
         self.label_13.setText(_translate("MainWindow", "Current task of Robot 2"))
         self.MobRobStatusLabel.setText(_translate("MainWindow", "Mobile Robot"))
         self.MobRobConfirmBtn.setText(_translate("MainWindow", "Confirm Parts Placed"))
@@ -905,6 +957,10 @@ class ControlMainWindow(QtWidgets.QMainWindow):
         super(ControlMainWindow, self).__init__(parent)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+
+        # Set the Assembly Confirm Button invisible
+        self.ui.AssemblyConfirmBtn.setVisible(False)
+
         # Starting a thread to listen for inputs from PLC
         self.listenThread = Thread(target=self.readModbusInputs, args=())
         self.listenThread.daemon = True
@@ -930,6 +986,8 @@ class ControlMainWindow(QtWidgets.QMainWindow):
         self.ui.StopDemo3Btn.pressed.connect(lambda : server.sendBool(9002, [bool(False)]))
         #self.ui.MobRobConfirmBtn.pressed.connect(lambda : server.sendBool(9003, [bool(True)]))
 
+        #self.ui.MobRobConfirmBtn.setVisible(False)
+
     def startListenThread(self):
         self.listenThread.start()
         return self
@@ -944,6 +1002,9 @@ class ControlMainWindow(QtWidgets.QMainWindow):
             self.ui.ModbusInputDemo3Rob2.setText(self.ui.statusListRobo2Demo3[server.readInt(1005)[0]])
             self.ui.ModbusInputMobRob.setText(self.ui.statusListMobRob[server.readInt(1006)[0]])
 
+            self.ui.AssemblyConfirmBtn.setVisible(server.readBool(9008)[0])
+
+            # Disabling buttons for starting other demos when one demo is running
             if server.readBool(9005)[0]:
                 self.ui.StartDemo2Btn.setDisabled(True)
                 self.ui.StartDemo3Btn.setDisabled(True)
@@ -963,10 +1024,17 @@ class ControlMainWindow(QtWidgets.QMainWindow):
                 self.ui.StartDemo3Btn.setDisabled(False)
                 self.ui.whichDemoIsRunLabel.setText("No demo is currently running")
 
+            # Parts placed confirm button
             if self.ui.MobRobConfirmBtn.isDown():
                 server.sendBool(9003, [bool(True)])
             else:
                 server.sendBool(9003, [bool(False)])
+
+            # Assembly confirm button
+            if self.ui.AssemblyConfirmBtn.isDown():
+                server.sendBool(9004, [bool(True)])
+            else:
+                server.sendBool(9004, [bool(False)])
 
     def startConnectingThread(self):
         self.connectingThread.start()
