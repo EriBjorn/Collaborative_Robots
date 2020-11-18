@@ -11,7 +11,7 @@ The project has taken place in the ManuLab in NTNU Ålesund, and takes use of tw
  -The GUI is made with QT-Designer using the pyqt5 library<br/>
 
 **Communication handling for the GUI**<br/>
- -The Communication is mainly Modbus, besides between the mobile robot and PLC, which is handled by the PLC
+ -The Communication is mainly Modbus, except between the mobile robot and PLC,
   the PLC program is not included in this repo<br/>
 
 **Group Members**<br/>
