@@ -14,7 +14,7 @@ The repo consists of:
    the PLC program is not included in this repo. 
 
 Group Members
-  -Isak Gamnes Sneltvedt
+  -Isak Gamnes Sneltvedt "\n"
   -Erik Bjørnøy 
   -Erlend Holseker
   -Arvin Khodabandeh
