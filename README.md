@@ -1,7 +1,7 @@
 # Collaborative_Robots
 
-This is a project by a group of students at NTNU, attending the course IP304814 - Innføring i Mekatronikk<br/>
-The project has taken place in the ManuLab in NTNU Ålesund, and takes use of two Omron collaborative robot arms and One LD-60 Mobile robot<br/>
+_This is a project by a group of students at NTNU, attending the course IP304814 - Innføring i Mekatronikk<br/>
+The project has taken place in the ManuLab in NTNU Ålesund, and takes use of two Omron collaborative robot arms and One LD-60 Mobile robot_<br/>
 
 
 **The repo consists of:**<br/>
