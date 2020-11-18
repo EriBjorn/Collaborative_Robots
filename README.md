@@ -15,7 +15,7 @@ The project has taken place in the ManuLab in NTNU Ålesund, and takes use of tw
   the PLC program is not included in this repo<br/>
 
 **Group Members**<br/>
- __-Isak Gamnes Sneltvedt<br/>
+ -Isak Gamnes Sneltvedt<br/>
  -Erik Bjørnøy<br/>
  -Erlend Holseker<br/>
- -Arvin Khodabandeh__
+ -Arvin Khodabandeh
