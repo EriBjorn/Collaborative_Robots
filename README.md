@@ -13,6 +13,9 @@ The project has taken place in the ManuLab in NTNU Ålesund, and takes use of tw
 **Communication handling for the GUI**<br/>
  -The Communication is mainly Modbus, except between the mobile robot and PLC,
   the PLC program is not included in this repo<br/>
+  
+**Video of finished project**<br/>
+https://www.youtube.com/watch?v=_xkODty-A94
 
 **Group Members**<br/>
  -Isak Gamnes Sneltvedt<br/>
